@@ -79,7 +79,10 @@ function sendXKCDUpdatesToSubscribers() {
 
     foreach ($emails as $email) {
         $email = trim($email);
-        $unsubscribeLink = "https://anshulverma.wuaze.com/xkcd-email-subscription/src/unsubscribe.php?email=" . urlencode($email);
+        $unsubscribeLink = "http://localhost/xkcd-email-subscription/src/unsubscribe.php?email=" . urlencode($email);
+
+
+
 
         $message = $comicHTML . "<p><a href='$unsubscribeLink'>Unsubscribe</a></p>";
         mail($email, $subject, $message, $headers);
